@@ -142,7 +142,7 @@ lemp-python-monitoring/
 
 # Контакты
 - *GitHub*: [@sap4ik](https://github.com/sap4ik)
-- *Telegram*: @Ssssssap
+- *Telegram*: @Ssssssssssap
 
 
 # Лицензия
