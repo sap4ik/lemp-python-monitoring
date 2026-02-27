@@ -52,27 +52,6 @@
 | Автоматизация | Bash, systemd, cron, logrotate |
 
 
-# Структура проекта
-lemp-python-monitoring/
-├── .gitignore
-├── README.md
-├── app.py
-├── requirements.txt
-├── scripts/
-│   ├── deploy.sh
-│   ├── health_check.sh
-│   └── system_backup.sh
-├── config/
-│   ├── nginx.conf
-│   ├── prometheus.yml
-│   ├── alertmanager.yml
-│   └── alert_rules.yml
-└── screenshots/
-    ├── grafana-dashboard.png
-    └── telegram-alert.png
-
-
-
 # Быстрый старт
 1. *Клонировать репозиторий*
    ```bash
@@ -99,47 +78,55 @@ lemp-python-monitoring/
    ```
 
 # Promql-запросы 
-   ```promql
-   # Загрузка CPU
+1. *Загрузка CPU*
+   ```
    100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
-   
-   # Использование памяти
+   ```
+2. *Использование памяти*
+   ```
    (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / 1024 / 1024
-   
-   # Сетевой трафик
+   ```
+3. *Сетевой трафик*
+   ```
    rate(node_network_receive_bytes_total{device!="lo"}[5m])
-
-   # Запросы к Python-приложению 
+   ```
+4. *Запросы к Python-приложению* 
+   ```
    rate(flask_http_request_total[5m])
-
+   ```
 
 # Тестирование алертов
-   ```bash
-   # Остановить приложение
+1. *Остановить приложение*
+   ```
    sudo systemctl stop python-app
-
-   # Через 1 минуту должно прийти уведомление в Telegram
-   # Запустить обратно
+   ```
+2. *Через 1 минуту должно прийти уведомление в Telegram*
+   *Запустить обратно*
+   ```
    sudo systemctl start python-app
-
-   # Придёт уведомление о восстановлении
+   ```
+3. *Придёт уведомление о восстановлении*
 
 
 # Полезные команды
-   ```bash
-   # Статусы сервисов
+   
+   *Статусы сервисов*
+   ```
    sudo systemctl status prometheus
    sudo systemctl status grafana-server
    sudo systemctl status alertmanager
    sudo systemctl status python-app
+   ```
 
-   # Логи
+   *Логи*
+   ```
    sudo journalctl -u prometheus -f
    sudo tail -f /var/log/nginx/error.log
-
-   # Бэкапы
+   ```
+   *Бэкапы*
+   ```
    ls -la /backups/daily/
-
+   ```
 
 # Контакты
 - *GitHub*: @sap4ik(https://github.com/sap4ik)
