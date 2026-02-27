@@ -53,6 +53,24 @@
 
 
 # Структура проекта
+lemp-python-monitoring/
+├── .gitignore
+├── README.md
+├── app.py
+├── requirements.txt
+├── scripts/
+│   ├── deploy.sh
+│   ├── health_check.sh
+│   └── system_backup.sh
+├── config/
+│   ├── nginx.conf
+│   ├── prometheus.yml
+│   ├── alertmanager.yml
+│   └── alert_rules.yml
+└── screenshots/
+    ├── grafana-dashboard.png
+    └── telegram-alert.png
+
 
 
 # Быстрый старт
@@ -124,8 +142,8 @@
 
 
 # Контакты
-- **GitHub**: [@sap4ik](https://github.com/sap4ik)
-- **Telegram**: [@Ssssssssssap](https://t.me/Ssssssssssap)
+- *GitHub*: @sap4ik(https://github.com/sap4ik)
+- *Telegram*: @Ssssssssssap (https://t.me/Ssssssssssap)
 
 # Лицензия
 MIT License. Подробнее в файле [LICENSE](LICENSE).
