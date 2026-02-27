@@ -100,8 +100,7 @@
    ```
    sudo systemctl stop python-app
    ```
-2. *Через 1 минуту должно прийти уведомление в Telegram*
-   *Запустить обратно*
+2. *Через 1 минуту должно прийти уведомление в Telegram. После чего запустить обратно*
    ```
    sudo systemctl start python-app
    ```
@@ -109,7 +108,6 @@
 
 
 # Полезные команды
-   
    *Статусы сервисов*
    ```
    sudo systemctl status prometheus
